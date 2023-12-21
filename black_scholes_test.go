@@ -20,16 +20,16 @@ func TestOptionPricing(t *testing.T) {
 	}
 	wantc := 10.45058
 	wantp := 5.573526
-	gotc, err_c := option.CallPrice()
-	if err_c != nil {
-		t.Fatalf("want no error for invalid input parameter, got %v", err_c)
+	gotc, errC := option.CallPrice()
+	if errC != nil {
+		t.Fatalf("want no error for invalid input parameter, got %v", errC)
 	}
 	if !closeEnough(gotc, wantc, 0.00001) {
 		t.Errorf("want %v, got %v", wantc, gotc)
 	}
-	gotp, err_p := option.PutPrice()
-	if err_p != nil {
-		t.Fatalf("want no error for invalid input parameter, got %v", err_p)
+	gotp, errP := option.PutPrice()
+	if errP != nil {
+		t.Fatalf("want no error for invalid input parameter, got %v", errP)
 	}
 	if !closeEnough(gotp, wantp, 0.00001) {
 		t.Errorf("want %v, got %v", wantc, gotc)

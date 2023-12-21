@@ -32,15 +32,15 @@ func main() {
 		},
 	}
 	for i, option := range option {
-		callPrice, err_call := option.CallPrice()
-		if err_call != nil {
-			println("Option number:", i, err_call.Error())
+		callPrice, errCall := option.CallPrice()
+		if errCall != nil {
+			println("Option number:", i, errCall.Error())
 		} else {
 			println("Option number:", i, "Call price:", callPrice)
 		}
-		putPrice, err_put := option.PutPrice()
-		if err_put != nil {
-			println("Option number:", i, err_put.Error())
+		putPrice, errPut := option.PutPrice()
+		if errPut != nil {
+			println("Option number:", i, errPut.Error())
 		} else {
 			println("Option number:", i, "Put price:", putPrice)
 		}
